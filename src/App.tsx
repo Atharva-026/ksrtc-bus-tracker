@@ -8,6 +8,7 @@ import LoginForm from './components/admin/LoginForm';
 import AdminDashboard from './components/admin/AdminDashboard';
 import { useAuthStore } from './stores/authStore';
 import { useBusStore } from './stores/busStore';
+import LanguageSwitcher from './components/LanguageSwitcher';
 
 export default function App() {
   const [showAdmin, setShowAdmin] = useState(false);
@@ -30,7 +31,10 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <Header onAdminClick={() => setShowAdmin(true)} />
+
+      <Header onAdminClick={() => setShowAdmin(true)}>
+        <LanguageSwitcher />
+      </Header>
       <main>
         <Hero />
         <div id="status" className="py-12">
